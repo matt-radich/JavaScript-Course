@@ -1,3 +1,5 @@
+/*Functions*/
+
 function logger() {
   console.log("My name is Matt");
 }
@@ -29,3 +31,30 @@ function process(drink, food) {
 
 const myFood = process(1, 7);
 console.log(myFood);
+
+/* Declarations VS Expressions */
+
+// function calcAge1(birthYear){
+//   const age = 2022 - birthYear;
+//   return age
+// }
+
+
+//Declaration , You can call a Declaration BEFORE you define it///////////////
+function calcAge1(birthYear){
+  return 2022 - birthYear;
+}
+const age1 = calcAge1(1989)
+
+console.log(age1);
+
+//Expression , Expressions produce values ///////////////
+const calcAge2 = function (birthYear) {
+  return 2022 - birthYear;
+}
+const age2 = calcAge2(1989)
+console.log(age2);
+
+console.log(age1, age2);
+
+//
