@@ -58,3 +58,32 @@ console.log(age2);
 console.log(age1, age2);
 
 //
+//Arrow Functions
+
+// const calcAge2 = function (birthYear) {
+//   return 2022 - birthYear;
+// }
+
+//value auto returns - oneliner functions
+const calcAge3 = birthYear => 2037 - birthYear
+const age3 = calcAge3(1991)
+console.log(age3);
+
+//more then 1 liner function - need to return
+const yearsUntilRetire = (birthYear, firstName) => {
+  const age = 2037 - birthYear
+  const retirement = 65 - age
+  // return retirement
+  return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetire(1991, "Matt"))
+console.log(yearsUntilRetire(1981, "Bob"))
+
+/////////Functions calling other functions
+
+// function fruitProcessor(apples, oranges) {
+//   console.log(apples, oranges);
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`
+//   return juice;
+// }
