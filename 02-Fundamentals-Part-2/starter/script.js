@@ -146,3 +146,5 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 checkWinner(scoreDolphins, scoreKoalas);
 
 checkWinner(576, 111)
+
+checkWinner(111, 576)
