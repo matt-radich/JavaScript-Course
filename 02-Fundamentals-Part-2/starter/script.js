@@ -241,3 +241,26 @@ console.log(friends.indexOf("Matt1"));
 console.log(friends.includes("Matt1"));
 
 
+//Coding Challenge 2 < -------------------------------------------------------------
+//Build a tip calculator, Tip 15% of the bill if the bill value is between 50
+//and 300, and if the value is different, tip 20%
+
+const calcTip = function(billValue) {
+  if (billValue >=50 && billValue <=300) {
+    return billValue *0.15
+  } else {
+    return billValue *0.20
+  }
+}
+
+console.log(calcTip(100));
+
+const bills = [125, 555, 44]
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+console.log(bills, tips);
+
+//Bonus: Create an array "totals" containing the total values, so bill+tip
+
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log(totals);
