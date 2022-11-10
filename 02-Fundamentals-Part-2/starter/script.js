@@ -154,7 +154,7 @@
 //<------------------------------------------------------------------------------------
 
 
-//Introduction to Arrays//////////////////////
+//Introduction to Arrays <----------------------------------------------------------
 
 //instead of like below, we can put into an array
 
@@ -162,43 +162,82 @@
 // const friend2 = "Matt2"
 // const friend3 = "Matt3"
 
-const friends = ["Matt1", "Matt2", "Matt3"]
-console.log(friends);
+// const friends = ["Matt1", "Matt2", "Matt3"]
+// console.log(friends);
 
-const years1 = new Array(1991,1984,2008,2020);
+// const years1 = new Array(1991,1984,2008,2020);
 
-console.log(friends[0]);
-console.log(friends[2]);
+// console.log(friends[0]);
+// console.log(friends[2]);
 
 //gives us how many options are in the array - not 0 based
-console.log(friends.length);
+
+// console.log(friends.length);
+
 //length is not 0 based, so we always subtract 1 to get end element in an the length
 //of an array
 
 //Expresssion produces a value 
-console.log(friends[friends.length - 1]);
+// console.log(friends[friends.length - 1]);
 
 //can change / mutate array - change position 2 in the array to another name
-friends[2] = "NotMatt";
-console.log(friends);
-const firstName = "Matt"
-const matt = [firstName, "Radich", 2037 - 1989, "Teacher", friends];
+// friends[2] = "NotMatt";
+// console.log(friends);
+// const firstName = "Matt"
+// const matt = [firstName, "Radich", 2037 - 1989, "Teacher", friends];
 
-console.log(matt);
-console.log(matt.length);
+// console.log(matt);
+// console.log(matt.length);
 
 //Exercise < ------------------------------------------------
 
-const calcAge4 = function(birthYear) {
-  return 2037 - birthYear
-}
+// const calcAge4 = function(birthYear) {
+//   return 2037 - birthYear
+// }
 
-const years = [1990, 1967, 2002, 2010, 2018];
+// const years = [1990, 1967, 2002, 2010, 2018];
 
-const age1 = calcAge4(years[0]);
-const age2 = calcAge4(years[1]);
-const age3 = calcAge4(years[years.length - 1]);
-console.log(age1, age2, age3);
+// const age1 = calcAge4(years[0]);
+// const age2 = calcAge4(years[1]);
+// const age3 = calcAge4(years[years.length - 1]);
+// console.log(age1, age2, age3);
 
-const ages = [calcAge4(years[0]), calcAge4(years[1]), calcAge4(years[years.length - 1])]
-console.log(ages);
+// const ages = [calcAge4(years[0]), calcAge4(years[1]), calcAge4(years[years.length - 1])]
+// console.log(ages);
+
+//Array Methods < ---------------------------------------------------------------------
+
+//Add Elements -----------
+const friends = ["Matt1", "Matt2", "Matt3"];
+
+//Array Push method , Adds element to end of array----
+//Returns the length of the array
+//Put push into variable aswel
+friends.push("MattPush1")
+const newLength = friends.push("MattPushVariable");
+console.log(friends);
+console.log(newLength);
+
+//Array Unshift , Adds element to beginning of array----
+//Returns length of the array
+friends.unshift("MattUnshift")
+console.log(friends);
+
+//Remove Elements -------------
+friends.pop()//removes last element of the array
+friends.pop()
+friends.pop()
+//pop returns the removed element
+console.log(friends);
+
+friends.shift()//removes first element of the array
+//shift returns the removed element
+console.log(friends);
+
+//gives us the index of where the element is in the array
+console.log(friends.indexOf("Matt1"));
+
+//checks to see if the element is in the array - returns True or False
+console.log(friends.includes("Matt1"));
+
+
