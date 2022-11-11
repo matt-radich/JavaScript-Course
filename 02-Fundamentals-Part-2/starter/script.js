@@ -274,3 +274,33 @@ const matt = {
   job: "student",
   friends: ["matt1", "matt2", "matt3"]
 };
+console.log(matt);
+
+//Dot VS Bracket Notation --
+//Dot use real property name
+console.log(matt.lastName);
+
+//Bracket we can put any expression - 
+console.log(matt["lastName"]);
+
+const nameKey = "Name";
+console.log(matt["first" + nameKey]);
+//creates string firstName, retrieve data from object
+//Does not work for dot notation
+console.log(matt["last" + nameKey]);
+
+//When to use them??---
+//When we need to compute property name , use bracket, 
+//any others use dot notation
+
+//
+
+const interestedIn = prompt("What do you want to know about Matt??, Choose between firstName, lastName, age, job, and friends")
+
+
+
+if(matt[interestedIn]) {
+  console.log(matt[interestedIn]);
+}else {
+  console.log("Wrong Request, Choose between firstName, lastName, age, job, and friendslocation");
+}
