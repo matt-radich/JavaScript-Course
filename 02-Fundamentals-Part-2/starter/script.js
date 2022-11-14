@@ -304,3 +304,22 @@ if(matt[interestedIn]) {
 }else {
   console.log("Wrong Request, Choose between firstName, lastName, age, job, and friendslocation");
 }
+
+matt.location = 'Auckland';
+matt["twitter"] = "@mattRadich"
+console.log(matt);
+
+//Challenge
+//"Matt has 3 friends, and his best friend is called Michael"
+
+// console.log(matt.friends);
+
+// const bestFriend = ("matt1")
+
+// if(matt[bestFriend]){
+//   console.log(matt.friends[0]);
+// }else {
+//   console.log((matt.friends));
+// }
+console.log(`${matt.firstName} has ${matt.friends.length} friends, and his 
+best friend is called ${matt.friends[0]}`);
