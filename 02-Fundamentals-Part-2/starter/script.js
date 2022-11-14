@@ -267,7 +267,7 @@ console.log(totals);*/
 //<---------------------------------------
 //Intro to Objects
 
-const matt = {
+/*const matt = {
   firstName: "matt",
   lastName: "radich",
   age: 2022 - 1989,
@@ -293,9 +293,9 @@ console.log(matt["last" + nameKey]);
 //When we need to compute property name , use bracket, 
 //any others use dot notation
 
-//
+//*/
 
-const interestedIn = prompt("What do you want to know about Matt??, Choose between firstName, lastName, age, job, and friends")
+/*const interestedIn = prompt("What do you want to know about Matt??, Choose between firstName, lastName, age, job, and friends")
 
 
 
@@ -307,19 +307,62 @@ if(matt[interestedIn]) {
 
 matt.location = 'Auckland';
 matt["twitter"] = "@mattRadich"
-console.log(matt);
+console.log(matt);*/
 
 //Challenge
 //"Matt has 3 friends, and his best friend is called Michael"
 
-// console.log(matt.friends);
+/*console.log(`${matt.firstName} has ${matt.friends.length} friends, and his 
+best friend is called ${matt.friends[0]}`);*/
 
-// const bestFriend = ("matt1")
 
-// if(matt[bestFriend]){
-//   console.log(matt.friends[0]);
-// }else {
-//   console.log((matt.friends));
-// }
-console.log(`${matt.firstName} has ${matt.friends.length} friends, and his 
-best friend is called ${matt.friends[0]}`);
+//Object Methods < ----------------------------------------------------------------------
+
+const matt = {
+  firstName: "matt",
+  lastName: "radich",
+  birthYear: 1989,
+  job: "student",
+  friends: ["matt1", "matt2", "matt3"],
+  hasDriversLicense: true,
+
+  // calcAge: function(birthYear) {
+  //   return 2022 - birthYear
+  // }
+
+  // calcAge: function() {
+  //   return 2022 - this.birthYear
+  // }
+  calcLicense: function() {
+    if(this.hasDriversLicense == true) {
+      return ;
+    }else {
+      console.log("Does not have a licence");
+    }
+  },
+
+  calcAge: function() {
+    this.age = 2022 - this.birthYear
+    return this.age
+  },
+
+  getInfo: function() {
+    return `${this.firstName} is a ${this.calcAge()} - year old ${matt.job}, 
+    and he has ${this.hasDriversLicense ? "a" : "no"} drivers license`
+  }
+};
+
+console.log(matt.calcAge());
+
+console.log(matt.age);
+console.log(matt.age);
+console.log(matt.age);
+//console.log(matt["calcAge"](1989));
+
+//Challenge
+//"Matt is a 33 yearold student. and he has a drivers license"
+
+console.log(matt.getInfo());
+//-- needed to write a mehtod to calculate the string
+// console.log(`${matt.firstName} is a ${matt.age} year old ${matt.job},
+// and ${matt.calcLicense}`);
