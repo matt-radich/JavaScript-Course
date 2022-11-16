@@ -318,7 +318,7 @@ best friend is called ${matt.friends[0]}`);*/
 
 //Object Methods < ----------------------------------------------------------------------
 
-const matt = {
+/*const matt = {
   firstName: "matt",
   lastName: "radich",
   birthYear: 1989,
@@ -354,15 +354,66 @@ const matt = {
 
 console.log(matt.calcAge());
 
+console.log(matt);
 console.log(matt.age);
-console.log(matt.age);
-console.log(matt.age);
+console.log(matt.age);*/
+
 //console.log(matt["calcAge"](1989));
 
 //Challenge
 //"Matt is a 33 yearold student. and he has a drivers license"
 
-console.log(matt.getInfo());
+//console.log(matt.getInfo());
 //-- needed to write a mehtod to calculate the string
 // console.log(`${matt.firstName} is a ${matt.age} year old ${matt.job},
 // and ${matt.calcLicense}`);
+
+//Object Challenge <-----------------------------------------------------
+//Compare BMI
+
+
+const mark = {
+  firstName: "mark",
+  lastName: "miller",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height * this.height)
+    return this.bmi
+  }
+}
+
+mark.calcBMI();
+console.log(mark);
+
+const john = {
+  firstName: "john",
+  lastName: "smith",
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height * this.height)
+    return this.bmi
+  }
+  
+}
+
+john.calcBMI()
+console.log(john);
+
+console.log(mark.bmi, john.bmi);
+
+// console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) is higher than
+// ${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()}) !`);
+
+// ---- Put results into a ifELse
+
+if(mark.bmi > john.bmi) {
+  console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) is higher than
+  ${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()}) !`);
+}else if (john.bmi > mark.bmi) {
+  console.log(`${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()}) is higher than
+  ${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) !`);
+}
