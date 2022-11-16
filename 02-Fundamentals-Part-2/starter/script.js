@@ -372,7 +372,7 @@ console.log(matt.age);*/
 //Compare BMI
 
 
-const mark = {
+/*const mark = {
   firstName: "mark",
   lastName: "miller",
   mass: 78,
@@ -416,4 +416,34 @@ if(mark.bmi > john.bmi) {
 }else if (john.bmi > mark.bmi) {
   console.log(`${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()}) is higher than
   ${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) !`);
+}*/
+
+//< Iteration - For Loop-------------------------------------------------------------------------
+//For Loop < -------------------------------------------------
+
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+// console.log("rep 1");
+
+//instead of the above - run a loop
+// for loop - has a counter
+//- first part = intital value of counter
+//- second part = logical cond, that is evaluated before each iteration of the loop,
+//for loop will continue to run aslong as cond is TRUE
+//- third part =
+for(let rep = 1; rep <= 10; rep++) {
+  console.log("rep 1"); //prints this string 10x
 }
+
+for(let rep = 1; rep <= 10; rep++) {
+  console.log(`rep ${rep}`); //insert rep variable, now we get a result counting 1 to 10
+}
+
+
