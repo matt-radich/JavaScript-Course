@@ -450,7 +450,7 @@ for(let rep = 1; rep <= 10; rep++) {
 
 // Looping arrays, Breaking, Continuing < ---------------------------------------
 
-const matt = [
+/*const matt = [
   "Matt",
   "Radich",
   2022 - 1989,
@@ -501,4 +501,32 @@ for(let i = 0; i < matt.length; i++) {
   if(typeof matt[i] === "number") break;
 
   console.log(matt[i], typeof matt[i]);
+}*/
+
+//Looping Backwards & Loops in Loops < --------------------------------------
+
+const matt = [
+  "Matt",
+  "Radich",
+  2022 - 1989,
+  "Student",
+  ["Friend1", "Friend2", "Friend3"],
+];
+
+// 0, 1, 2, ...., => 4 We did with loop before
+//4, 3, 2, ...., => 0 we want to loop backwards now
+
+//Counter - Condition - Counter Update
+for(let i = matt.length - 1; i >= 0; i--) {
+  console.log(i, matt[i]);
+}
+
+//Loop inside Loop < --------------
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`----Starting Exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting Weight Rep ${rep}`);
+  }
 }
