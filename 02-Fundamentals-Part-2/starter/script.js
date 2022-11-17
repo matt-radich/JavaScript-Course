@@ -437,13 +437,68 @@ if(mark.bmi > john.bmi) {
 //- first part = intital value of counter
 //- second part = logical cond, that is evaluated before each iteration of the loop,
 //for loop will continue to run aslong as cond is TRUE
-//- third part =
-for(let rep = 1; rep <= 10; rep++) {
+//- third part = what you want to do with the result
+
+/*for(let rep = 1; rep <= 10; rep++) {
   console.log("rep 1"); //prints this string 10x
 }
 
 for(let rep = 1; rep <= 10; rep++) {
   console.log(`rep ${rep}`); //insert rep variable, now we get a result counting 1 to 10
 }
+*/
+
+// Looping arrays, Breaking, Continuing < ---------------------------------------
+
+const matt = [
+  "Matt",
+  "Radich",
+  2022 - 1989,
+  "Student",
+  ["Friend1", "Friend2", "Friend3"],
+  true
+];
+
+const types = [];
+// console.log(matt[0]);
+// console.log(matt[1]);
+// console.log(matt[2]);
 
 
+for(let i = 0; i < matt.length; i++) {
+  // Reading from matt array
+  console.log(matt[i], typeof matt[i]);
+
+  //Filling types array
+  // types[i] = typeof matt[i];
+
+  //Another way to fill array
+  //Add to end of array not beginning
+  types.push(typeof matt[i])
+}
+
+console.log(types);
+
+//calculate ages and store in new array <----------
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for(let i = 0; i < years.length; i++) {
+  ages.push (2037 - years[i]);
+}
+console.log(ages);
+
+// Continue and Break
+console.log("----ONLY STRINGS----");
+for(let i = 0; i < matt.length; i++) {
+  if(typeof matt[i] !== "string") continue;
+
+  console.log(matt[i], typeof matt[i]);
+}
+//Break terminates the whole loop
+console.log("----BREAK WITH NUMBER----");
+for(let i = 0; i < matt.length; i++) {
+  if(typeof matt[i] === "number") break;
+
+  console.log(matt[i], typeof matt[i]);
+}
