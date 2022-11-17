@@ -505,7 +505,7 @@ for(let i = 0; i < matt.length; i++) {
 
 //Looping Backwards & Loops in Loops < --------------------------------------
 
-const matt = [
+/*const matt = [
   "Matt",
   "Radich",
   2022 - 1989,
@@ -529,4 +529,31 @@ for (let exercise = 1; exercise < 4; exercise++) {
   for (let rep = 1; rep < 6; rep++) {
     console.log(`Exercise ${exercise}: Lifting Weight Rep ${rep}`);
   }
+}*/
+
+//While Loop <------------------------------------------------------------
+
+/*for (let rep = 1; rep <= 10; rep++) {
+  console.log(`FOR LOOP--- Lifting Weight Rep ${rep}`);
+}*/
+
+//While Loop , We can only specfiy the condition
+//Runs WHILE the condition is true
+//Can be any condition, does not have to be related to counter at all
+
+let rep = 1;
+while (rep <= 10) {
+  //console.log(`WHILE LOOP--- Lifting Weight Rep ${rep}`);
+  rep++;
+}
+//math.random -creates a number between 0 & 1 then multiply by 6 - returns a decimal
+
+//math.trunc gives number between 0-5
+let dice = Math.trunc(Math.random() * 6) + 1 
+
+
+while(dice !== 6) {
+  console.log(`You rolled a ${dice}!`);
+  dice = Math.trunc(Math.random() * 6) + 1 
+  if (dice === 6) console.log("!...Loop is about to end...!");
 }
