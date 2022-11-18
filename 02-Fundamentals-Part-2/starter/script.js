@@ -541,7 +541,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
 //Runs WHILE the condition is true
 //Can be any condition, does not have to be related to counter at all
 
-let rep = 1;
+/*let rep = 1;
 while (rep <= 10) {
   //console.log(`WHILE LOOP--- Lifting Weight Rep ${rep}`);
   rep++;
@@ -556,4 +556,53 @@ while(dice !== 6) {
   console.log(`You rolled a ${dice}!`);
   dice = Math.trunc(Math.random() * 6) + 1 
   if (dice === 6) console.log("!...Loop is about to end...!");
+}*/
+
+//Challenge tip calc with array + loop < -----------------------------
+
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+
+const totals = []
+
+
+for (let i= 0; i < bill.length; i++) {
+
+  console.log(bill[i]);
+
+  const calcTip = function(bill) {
+    if (bill >=50 && bill <=300) {
+      return bill *0.15
+    } else {
+      return bill *0.20
+    }
+  }
+  
+  tips.push(calcTip(bill[i]))
+  totals.push(bill[i] + tips[i])
+  
 }
+
+console.log(bill, tips, totals);
+
+
+
+//Bonus Challenge #4 <----------------
+
+// let sum = 0;
+
+// for (let i=0; i < bill.length; i++) {
+//   sum += bill[i]
+// }
+// console.log(sum); //2323 total - Works- gives us total of "bill" Array
+
+// const avg = sum / bill.length
+// console.log(avg); //232.3 = the average of bill array. total / elements in the array
+
+
+
+
+
+
+
