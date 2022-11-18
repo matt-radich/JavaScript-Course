@@ -588,47 +588,60 @@ while(dice !== 6) {
 
 //Above can also be with function outside of loop<---Like below--------------
 
-// const calcTip = function(bill) {
-//   if (bill >=50 && bill <=300) {
-//     return bill *0.15
-//   } else {
-//     return bill *0.20
-// }
-// }
-// const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const calcTip = function(bill) {
+  if (bill >=50 && bill <=300) {
+    return bill *0.15
+  } else {
+    return bill *0.20
+}
+}
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
-// const tips = [];
+const tips = [];
 
-// const totals = []
+const totals = []
 
-// for (let i = 0; i < bill.length; i++) {
-//   const tip = calcTip(bill[i]);
-//   tips.push(tip)
-//   totals.push(tip+bill[i])
-// }
+for (let i = 0; i < bill.length; i++) {
+  const tip = calcTip(bill[i]);
+  tips.push(tip)
+  totals.push(tip+bill[i])
+}
 
-// console.log(bill, tips, totals);
+console.log(bill, tips, totals);
 
 
 
 //Bonus Challenge #4 <----------------
 //Get sum of all numbers in BILL array
 //Get Average number
-const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
-let sum = 0;
+// let sum = 0;
 
-for (let i=0; i < bill.length; i++) {
-  sum += bill[i]
-}
-console.log(sum); //2323 total - Works- gives us total of "bill" Array
-
-const avg = sum / bill.length
-console.log(avg); //232.3 = the average of bill array. total / elements in the array
-
-// const calcAverage = function(arr) {
-
+// for (let i=0; i < bill.length; i++) {
+//   sum += bill[i]
 // }
+// console.log(sum); //2323 total - Works- gives us total of "bill" Array
+
+// const avg = sum / bill.length
+// console.log(avg); //232.3 = the average of bill array. total / elements in the array
+
+//<-------Another solution using a Function for bonusChallenge--------------------
+
+const calcAverage = function(arr) {
+  let sum = 0
+  for (let i = 0; i < arr.length; i++) {//arr = the arr we are recieveing in the parameter
+    //sum = sum + arr[i]
+    sum += arr[i]
+  }
+  return sum / arr.length
+}
+console.log(calcAverage([2,3,7]))//this is the array we are looping over//Works - gives us 11 in console
+// console.log(calcAverage(totals))
+console.log(calcAverage(totals));
+
+
+
 
 
 
