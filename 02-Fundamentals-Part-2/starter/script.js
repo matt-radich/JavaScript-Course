@@ -560,28 +560,51 @@ while(dice !== 6) {
 
 //Challenge tip calc with array + loop < -----------------------------
 
+// const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// const tips = [];
+
+// const totals = []
+
+
+// for (let i= 0; i < bill.length; i++) {
+
+//   console.log(bill[i]);
+
+//   const calcTip = function(bill) {
+//     if (bill >=50 && bill <=300) {
+//       return bill *0.15
+//     } else {
+//       return bill *0.20
+//     }
+//   }
+  
+//   tips.push(calcTip(bill[i]))
+//   totals.push(bill[i] + tips[i])
+  
+// }
+
+// console.log(bill, tips, totals);
+
+//Above can also be with function outside of loop<---Like below--------------
+
+const calcTip = function(bill) {
+  if (bill >=50 && bill <=300) {
+    return bill *0.15
+  } else {
+    return bill *0.20
+}
+}
 const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
 const tips = [];
 
 const totals = []
 
-
-for (let i= 0; i < bill.length; i++) {
-
-  console.log(bill[i]);
-
-  const calcTip = function(bill) {
-    if (bill >=50 && bill <=300) {
-      return bill *0.15
-    } else {
-      return bill *0.20
-    }
-  }
-  
-  tips.push(calcTip(bill[i]))
-  totals.push(bill[i] + tips[i])
-  
+for (let i = 0; i < bill.length; i++) {
+  const tip = calcTip(bill[i]);
+  tips.push(tip)
+  totals.push(tip+bill[i])
 }
 
 console.log(bill, tips, totals);
