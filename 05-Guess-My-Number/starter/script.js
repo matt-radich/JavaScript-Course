@@ -37,6 +37,9 @@ let score = 20;//start score at 20 then decrease by 1 with each wrong guess
 
 let highScore = 0//define highscore at start
 
+const displayMessage = function(message) {
+  document.querySelector(".message").textContent = message
+}
 //displays number
 //moved to when play wins so number is visible on win
 //document.querySelector(".number").textContent = secretNumber
@@ -47,12 +50,15 @@ document.querySelector(".check").addEventListener("click", function() {
 
   //when there is no input
   if(!guess) {
-    document.querySelector(".message").textContent = "No Number Entered!"
+    //code refactor with function declared at top of code ...
+    displayMessage("No Number Entered")
+    // document.querySelector(".message").textContent = "No Number Entered!"
 
     //when player wins
   }else if (guess === secretNumber) {
-    document.querySelector(".message").textContent = "Correct number!"
-
+    //document.querySelector(".message").textContent = "Correct number!"
+    //code refactor with function
+    displayMessage("Correct Number!")
     //display secret number
     document.querySelector(".number").textContent = secretNumber
 
@@ -68,29 +74,55 @@ document.querySelector(".check").addEventListener("click", function() {
       document.querySelector(".highscore").textContent = highScore
     }
 
-    //when guess is to high
-  }else if (guess > secretNumber) {
+    //CODE REFACTOR < ---------------------------------------------------------------
+   //When guess is wrong
+   //guess not equal to secretNumber
+   //ternary operator conditional - operator will return a value
+   //put duplicate code into function && call function . e.g .textContent
+
+  }else if(guess !== secretNumber) {
     if(score > 1) {
-      document.querySelector(".message").textContent = "To High!"
+      // document.querySelector(".message").textContent = guess > secretNumber ? 
+      // "To High!" : "To Low!"
+      //refactor with message function with ternary operator
+      displayMessage(guess > secretNumber ? 
+      "To High!" : "To Low!")
       score-- //same as score = score -1
       document.querySelector(".score").textContent = score
     }else {
-      document.querySelector(".message").textContent = "You Lost!"
-      document.querySelector(".score").textContent = 0
-    }
-    
-     //when guess is to low
-  }else if (guess < secretNumber) {
-    if(score > 1) {
-      document.querySelector(".message").textContent = "To Low!"
-      score-- //same as score = score -1
-      document.querySelector(".score").textContent = score
-    }else {
-      document.querySelector(".message").textContent = "You Lost!"
+      //document.querySelector(".message").textContent = "You Lost!"
+      displayMessage( "You Lost!")
       document.querySelector(".score").textContent = 0
     }
   }
 })
+  
+  
+  
+  
+   //when guess is to high
+//   else if (guess > secretNumber) {
+//     if(score > 1) {
+//       document.querySelector(".message").textContent = "To High!"
+//       score-- //same as score = score -1
+//       document.querySelector(".score").textContent = score
+//     }else {
+//       document.querySelector(".message").textContent = "You Lost!"
+//       document.querySelector(".score").textContent = 0
+//     }
+    
+//      //when guess is to low
+//   }else if (guess < secretNumber) {
+//     if(score > 1) {
+//       document.querySelector(".message").textContent = "To Low!"
+//       score-- //same as score = score -1
+//       document.querySelector(".score").textContent = score
+//     }else {
+//       document.querySelector(".message").textContent = "You Lost!"
+//       document.querySelector(".score").textContent = 0
+//     }
+//   }
+// })
 
 //Challenge < ----------------
 //implement a game reset button, so player can make a new guess
@@ -100,7 +132,9 @@ document.querySelector(".again").addEventListener("click", function() {
   score = 20
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   //change text back to default
-  document.querySelector(".message").textContent = "Start Guessing . . ."
+  // document.querySelector(".message").textContent = "Start Guessing . . ."
+  //refactor with message function
+  displayMessage("Start Guessing..")
   document.querySelector(".score").textContent = score
   //change number guessed back to ?
   document.querySelector(".number").textContent = "?"
