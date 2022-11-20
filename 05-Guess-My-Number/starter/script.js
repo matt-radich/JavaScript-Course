@@ -35,6 +35,8 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;//start score at 20 then decrease by 1 with each wrong guess
 
+let highScore = 0//define highscore at start
+
 //displays number
 //moved to when play wins so number is visible on win
 //document.querySelector(".number").textContent = secretNumber
@@ -59,6 +61,12 @@ document.querySelector(".check").addEventListener("click", function() {
 
     //number box width double size on correct guess
     document.querySelector(".number").style.width = "30rem"
+    
+    //change highscore 
+    if(score > highScore) {
+      highScore = score
+      document.querySelector(".highscore").textContent = highScore
+    }
 
     //when guess is to high
   }else if (guess > secretNumber) {
