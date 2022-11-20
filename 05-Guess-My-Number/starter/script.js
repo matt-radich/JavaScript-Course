@@ -40,11 +40,22 @@ document.querySelector(".number").textContent = secretNumber
 document.querySelector(".check").addEventListener("click", function() {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);//gives back a string, convert to number on above line
-  //
+
+  //when there is no input
   if(!guess) {
     document.querySelector(".message").textContent = "No Number Entered!"
+
+    //when player wins
   }else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "Correct number!"
+
+    //background changes to green when number is guessed correctly
+    document.querySelector("body").style.backgroundColor = "#60b347"
+
+    //number box width double size on correct guess
+    document.querySelector(".number").style.width = "30rem"
+
+    //when guess is to high
   }else if (guess > secretNumber) {
     if(score > 1) {
       document.querySelector(".message").textContent = "To High!"
@@ -55,6 +66,7 @@ document.querySelector(".check").addEventListener("click", function() {
       document.querySelector(".score").textContent = 0
     }
     
+     //when guess is to low
   }else if (guess < secretNumber) {
     if(score > 1) {
       document.querySelector(".message").textContent = "To Low!"
