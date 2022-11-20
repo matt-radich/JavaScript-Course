@@ -31,11 +31,13 @@ console.log(document.querySelector(".guess").value)*/
 //.random gives a decimal
 //.trunc gives us a whole number
 //multiply by what number you want between e.g 20 = 1-19 , so +1 will include 20
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;//start score at 20 then decrease by 1 with each wrong guess
 
-document.querySelector(".number").textContent = secretNumber
+//displays number
+//moved to when play wins so number is visible on win
+//document.querySelector(".number").textContent = secretNumber
 
 document.querySelector(".check").addEventListener("click", function() {
   const guess = Number(document.querySelector(".guess").value);
@@ -48,6 +50,9 @@ document.querySelector(".check").addEventListener("click", function() {
     //when player wins
   }else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "Correct number!"
+
+    //display secret number
+    document.querySelector(".number").textContent = secretNumber
 
     //background changes to green when number is guessed correctly
     document.querySelector("body").style.backgroundColor = "#60b347"
@@ -77,4 +82,25 @@ document.querySelector(".check").addEventListener("click", function() {
       document.querySelector(".score").textContent = 0
     }
   }
+})
+
+//Challenge < ----------------
+//implement a game reset button, so player can make a new guess
+
+document.querySelector(".again").addEventListener("click", function() {
+  //set score && secret number
+  score = 20
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  //change text back to default
+  document.querySelector(".message").textContent = "Start Guessing . . ."
+  document.querySelector(".score").textContent = score
+  //change number guessed back to ?
+  document.querySelector(".number").textContent = "?"
+  //change user input field back to empty
+  document.querySelector(".guess").value = ""
+
+  //reset CSS
+  document.querySelector("body").style.backgroundColor = "#222"
+  document.querySelector(".number").style.width = "15rem"
+ 
 })
