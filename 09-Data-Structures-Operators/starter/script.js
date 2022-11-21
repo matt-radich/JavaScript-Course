@@ -12,11 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
   
-  //function to order food, return 2 values
-  order: function(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -31,8 +26,74 @@ const restaurant = {
       close: 24,
     },
   },
+
+  //function to order food, return 2 values
+  order: function(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  },
+
+  orderDelivery: function({starterIndex,mainIndex,time,address}) {
+    console.log(`Order Recieved ${this.starterMenu[starterIndex]}
+    and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  },
 };
 
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "This Street",
+  mainIndex: 2,
+  starterIndex: 2,
+})
+//Destructure Objects
+//specify names of the properties in the object
+// = the variable name of the object
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories);
+
+//varaible names different to the property names
+//changed property names to new names eg. name to restaurantName
+const {
+  name: restaurantName, 
+  openingHours: hours, 
+  categories: tags
+} = restaurant
+
+console.log(restaurantName, hours, tags);
+
+// Default value
+//menu to empty array, without it, we get undefined
+const {menu = [], starterMenu: starters =[]} = restaurant
+console.log(menu, starters);
+
+// Mutating variables
+
+let a = 111
+let b = 999
+const obj = {a: 23, b: 7,c: 14}
+console.log(obj);
+
+//to overwrite variables we have to wrap the object in parenthesis
+({ a, b } = obj)
+console.log(a, b);
+
+// Nested Objects
+const { 
+  fri: {open, close} 
+} = openingHours
+console.log(open, close);
+
+//can also change the names
+const { 
+  fri: {open: o, close: c} 
+} = openingHours
+console.log(o, c);
+
+
+
+
+
+
+/*
 //Destructing Arrays
 const arr = [2,3,4]
 const a = arr[0]
@@ -88,3 +149,4 @@ console.log(p, q, r); //returns 8, 9, undefined
 
 const [m = 1, n = 1, v = 1] = [8, 9]
 console.log(m, n , v); //returns 8, 9 , 1
+*/
